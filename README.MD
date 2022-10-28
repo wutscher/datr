@@ -91,5 +91,5 @@ If you havn't already add the `~/.cargo/bin` directory to your PATH.
 
 ## Contribution
 
-I made this for my own personal use but I welcom anyone who wants to expand or improve it.
+I made this for my own personal use but I welcome anyone who wants to expand or improve it.
 If no major bugs appear, I will most likely not be updating this app.
