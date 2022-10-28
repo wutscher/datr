@@ -10,6 +10,12 @@ into their new folders according to the specified pattern.
 
 ## How to install
 
+### Download binary
+
+Download the Linux binary from [https://github.com/wutscher/datr/releases/tag/release](https://github.com/wutscher/datr/releases/tag/release)
+
+### Compile from Source
+
 1. Clone this repository
 2. run `cargo build --release`
 3. run `cargo install --path .`
