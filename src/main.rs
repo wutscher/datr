@@ -87,9 +87,14 @@ fn process_file(entry: &walkdir::DirEntry, output: &Path, format_str: &str, move
     let file = std::fs::File::open(entry.path())?;
     let oldest_date: DateTime<Utc> = match get_exif(file) {
         Some(date) => date,
-        None => match entry.metadata()?.created() {
-            Ok(date_match) => date_match.into(),
-            Err(_) => entry.metadata()?.modified()?.into()
+        None => {
+            let entry_created = entry.metadata()?.created()?;
+            let entry_modified = entry.metadata()?.modified()?;
+            if entry_modified < entry_created {
+                entry_modified.into()
+            } else {
+                entry_created.into()
+            }
         }
     };
 
